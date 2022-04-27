@@ -19,7 +19,12 @@ public class Logic1
     /// </summary>
     public bool CigarParty(int cigars, bool isWeekend)
     {
-        throw new NotImplementedException();
+        if (isWeekend && cigars >= 40)
+            return true;
+        else if ((cigars >= 40 && cigars <= 60))
+            return true;
+        else
+            return false;
     }
 
     /// <summary>
@@ -51,7 +56,12 @@ public class Logic1
     /// </summary>
     public bool SquirrelPlay(int temp, bool isSummer)
     {
-        throw new NotImplementedException();
+        if (isSummer && (temp >= 60 && temp <= 100))
+            return true;
+        else if (!isSummer && (temp >= 60 && temp <= 90))
+            return true;
+        else
+            return false;
     }
 
     /// <summary>
@@ -80,7 +90,10 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        throw new NotImplementedException();
+        if ((a + b >= 10) && (a + b < 20))
+            return 20;
+        else
+            return a + b;
     }
 
     /// <summary>
@@ -96,7 +109,55 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        throw new NotImplementedException();
+        switch(day)
+        {
+            case 0:
+                if (vacation)
+                    return "off";
+                else
+                    return "10:00";
+                break;
+            case 1:
+                if (vacation)
+                    return "10:00";
+                else
+                    return "7:00";
+                break;
+            case 2:
+                if (vacation)
+                    return "10:00";
+                else
+                    return "7:00";
+                break;
+            case 3:
+                if (vacation)
+                    return "10:00";
+                else
+                    return "7:00";
+                break;
+            case 4:
+                if (vacation)
+                    return "10:00";
+                else
+                    return "7:00";
+                break;
+            case 5:
+                if (vacation)
+                    return "10:00";
+                else
+                    return "7:00";
+                break;
+
+            case 6:
+                if (vacation)
+                    return "off";
+                else
+                    return "10:00";
+                break;
+            default:
+                return "";
+
+        }
     }
 
     /// <summary>
@@ -110,7 +171,15 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        throw new NotImplementedException();
+        //fix me
+        bool result = false;
+        if (a == 6 || b == 6)
+            result = true;
+        else if (a + b == 6)
+            result = true;
+        else if ((Math.Abs(a) - Math.Abs(b) == 6) || (Math.Abs(b) - Math.Abs(a) == 6))
+            result = true;
+        return result;
     }
 
     /// <summary>
@@ -137,7 +206,10 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
-        throw new NotImplementedException();
+        if ((n % 11 == 0) || (n % 11 == 1))
+            return true;
+        else
+            return false; 
     }
 
     /// <summary>
@@ -150,7 +222,10 @@ public class Logic1
     /// </summary>
     public bool More20(int n)
     {
-        throw new NotImplementedException();
+        if ((n % 20 == 1) || (n % 20 == 2))
+            return true;
+        else
+            return false;
     }
 
     /// <summary>
@@ -163,7 +238,14 @@ public class Logic1
     /// </summary>
     public bool Old35(int n)
     {
-        throw new NotImplementedException();
+        if (n % 3 == 0 && n % 5 == 0)
+            return false;
+        else if (n % 3 == 0)
+            return true;
+        else if (n % 5 == 0)
+            return true;
+        else
+            return false;
     }
 
     /// <summary>
@@ -193,7 +275,7 @@ public class Logic1
     {
         throw new NotImplementedException();
     }
-
+     
     /// <summary>
     /// Given 2 ints, a and b, return their sum. However, "teen" values in the range 13..19
     /// inclusive, are extra lucky. So if either value is a teen, just return 19.
@@ -204,7 +286,10 @@ public class Logic1
     /// </summary>
     public int TeenSum(int a, int b)
     {
-        throw new NotImplementedException();
+        if (((a >= 13) && (a <= 19)) || ((b >= 13) && (b <= 19)))
+            return 19; 
+        else
+            return a + b;
     }
 
     /// <summary>

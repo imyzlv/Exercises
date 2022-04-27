@@ -18,7 +18,11 @@ public class Warmup1
     /// </summary>
     public bool SleepIn(bool weekday, bool vacation)
     {
-        throw new NotImplementedException();
+        bool sleep = false;
+        //throw new NotImplementedException();
+        if (!weekday || vacation)
+            sleep = true;
+        return sleep;
     }
 
     /// <summary>
@@ -33,7 +37,11 @@ public class Warmup1
     /// </summary>
     public bool MonkeyTrouble(bool aSmile, bool bSmile)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
+        bool trouble = false;
+        if (aSmile == bSmile)
+            trouble = true;
+        return trouble;
     }
 
     /// <summary>
@@ -46,7 +54,10 @@ public class Warmup1
     /// </summary>
     public int SumDouble(int a, int b)
     {
-        throw new NotImplementedException();
+        if (a == b)
+            return (a + b) * 2;
+        else
+            return a + b;
     }
 
     /// <summary>
@@ -59,11 +70,15 @@ public class Warmup1
     /// </summary>
     public int Diff21(int n)
     {
-        throw new NotImplementedException();
+        if (n > 21)
+            return Math.Abs((21 - n) * 2);
+        else
+            return Math.Abs(21 - n);
     }
 
     /// <summary>
-    /// We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return true if we are in trouble.
+    /// We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23.
+    /// We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return true if we are in trouble.
     /// 
     /// parrotTrouble(true, 6) → true
     /// parrotTrouble(true, 7) → false
@@ -71,7 +86,10 @@ public class Warmup1
     /// </summary>
     public bool ParrotTrouble(bool talking, int hour)
     {
-        throw new NotImplementedException();
+        if (talking && (hour < 7 || hour > 20))
+            return true;
+        else
+            return false;
     }
 
     /// <summary>
@@ -83,7 +101,10 @@ public class Warmup1
     /// </summary>
     public bool Makes10(int a, int b)
     {
-        throw new NotImplementedException();
+        if ((a == 10 || b == 10) || (a + b == 10))
+            return true;
+        else
+            return false;
     }
 
     /// <summary>
@@ -93,9 +114,14 @@ public class Warmup1
     /// nearHundred(90) → true
     /// nearHundred(89) → false
     /// </summary>
-    public bool NearHundred(int n)
+    public bool NearHundred(int n) //fix me
     {
-        throw new NotImplementedException();
+        int smallNum, bigNum;
+        // bigNum = 
+        if ((((Math.Abs(n) >= 90) || (Math.Abs(n) <= 110))) || (((Math.Abs(n) >= 190) || (Math.Abs(n) <= 210))))
+            return true;
+        else
+            return false;
     }
 
     /// <summary>
