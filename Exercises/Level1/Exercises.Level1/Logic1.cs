@@ -90,13 +90,14 @@ public class Logic1
     /// </summary>
     public int CaughtSpeeding(int speed, bool isBirthday)
     {
+        int noTicket = 0, smallTicket = 1, bigTicket = 2;
         if (isBirthday)
             speed -= 5;
         if (speed >= 81)
-            return 2;
+            return bigTicket;
         if (speed >= 61 && speed <= 80)
-            return 1;
-        return 0;
+            return smallTicket;
+        return noTicket;
     }
 
     /// <summary>
@@ -109,10 +110,11 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        if ((a + b >= 10) && (a + b < 20))
+        int sum = a + b;
+        if ((sum >= 10) && (sum < 20))
             return 20;
         else
-            return a + b;
+            return sum;
     }
 
     /// <summary>
@@ -128,16 +130,17 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
+        string early = "7:00", late = "10:00", off = "off";
         if (day == 0 || day == 6)
         {
             if (vacation)
-                return "off";
+                return off;
             else
-                return "10:00";
+                return late;
         }
         if (vacation)
-            return "10:00";
-        return "7:00";
+            return late;
+        return early;
 
     }
 
@@ -198,7 +201,8 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
-        if ((n % 11 == 0) || (n % 11 == 1))
+        int remainder = n % 11;
+        if ((remainder == 0) || (remainder == 1))
             return true;
         else
             return false;
@@ -214,7 +218,8 @@ public class Logic1
     /// </summary>
     public bool More20(int n)
     {
-        if ((n % 20 == 1) || (n % 20 == 2))
+        int remainder = n % 20;
+        if ((remainder == 1) || (remainder == 2))
             return true;
         else
             return false;
@@ -252,10 +257,11 @@ public class Logic1
     public bool Less20(int n)
     {
         n += 2;
-        if (n % 20 == 0)
+        int remainder = n % 20;
+        if (remainder == 0)
             return true;
-        n -= 1;
-        if (n % 20 == 0)
+        remainder -= 1;
+        if (remainder == 0)
             return true;
         return false;
     }
@@ -457,9 +463,9 @@ public class Logic1
     /// </summary>
     public bool LastDigit(int a, int b, int c)
     {
-        a = a % 10;
-        b = b % 10;
-        c = c % 10;
+        a %= 10;
+        b %= 10;
+        c %= 10;
         if (a == b || a == c || b == c)
             return true;
         return false;
@@ -475,7 +481,6 @@ public class Logic1
     /// </summary>
     public bool LessBy10(int a, int b, int c)
     {
-        //fix me
         int minNumber = a;
         if (a < b && a < c)
             minNumber = a;
@@ -528,7 +533,7 @@ public class Logic1
     /// </summary>
     public int MaxMod5(int a, int b)
     {
-        int smaller, remainderA, remainderB;
+        int remainderA, remainderB;
         if (a == b)
             return 0;
         else
