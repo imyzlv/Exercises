@@ -37,8 +37,7 @@ public class Array1
     {
         if ((nums.Length > 0) && (nums[0] == nums[nums.Length - 1]))
             return true;
-        else
-            return false;
+        return false;
     }
 
     /// <summary>
@@ -122,16 +121,9 @@ public class Array1
     public int[] Reverse3(int[] nums)
     {
         int[] rotatedArray = new int[nums.Length];
-        int j = 0, pos = 0;
-        for (int i = 0; i < nums.Length; i++)
-        {
-            j = i - 4;
-            pos = nums.Length + j;
-            if (j >= 0)
-                rotatedArray[j] = nums[i];
-            else
-                rotatedArray[pos] = nums[i];
-        }
+        rotatedArray[0] = nums[2];
+        rotatedArray[1] = nums[1];
+        rotatedArray[2] = nums[0];
         return rotatedArray;
     }
 
@@ -166,20 +158,13 @@ public class Array1
     /// </summary>
     public int Sum2(int[] nums)
     {
-        //check next time. looks hacky
         int totalSum = 0;
-        if ((nums.Length > 1) && (nums != null))
-        {
-            totalSum = nums[0] + nums[1];
-        }
-        else if (nums.Length == 0)
-        {
-            totalSum = 0;
-        }
-        else
-        {
+        if (nums.Length == 0)
+            return totalSum;
+        if (nums.Length == 1)
             totalSum = nums[0];
-        }
+        if (nums.Length > 1)
+            totalSum = nums[0] + nums[1];
         return totalSum;
     }
 
@@ -196,11 +181,8 @@ public class Array1
         int[] result = new int[2];
         result[0] = a[1];
         result[1] = b[1];
-
         return result;
-        //check
 
-        //throw new NotImplementedException();
     }
 
     /// <summary>
@@ -301,14 +283,18 @@ public class Array1
     /// </summary>
     public int[] Fix23(int[] nums)
     {
-        //fix me
         int[] changedArray = new int[nums.Length];
         for (int i = 0; i < nums.Length; i++)
         {
-            if ((nums[i - 1] == 2) && (nums[i] == 3))
-                changedArray[i] = 0;
-            else
+            if (i == 0)
                 changedArray[i] = nums[i];
+            else
+            {
+                if (nums[i] == 3 && nums[i - 1] == 2)
+                    changedArray[i] = 0;
+                else
+                    changedArray[i] = nums[i];
+            }
         }
 
         return changedArray;
@@ -393,15 +379,10 @@ public class Array1
     {
         int totalLength = a.Length + b.Length;
         int[] combinedArray = new int[totalLength];
-        for (int i = 0; i < totalLength; i++)
-        {
-            if (i < a.Length - 1)
-            {
-                combinedArray[i] = a[i];
-            }
-            else
-                combinedArray[i] = b[i];
-        }
+        for (int i = 0; i < a.Length; i++)
+            combinedArray[i] = a[i];
+        for (int i = 0; i < b.Length; i++)
+            combinedArray[i + 2] = b[i];
         return combinedArray;
     }
 
@@ -478,7 +459,6 @@ public class Array1
     /// </summary>
     public int[] FrontPiece(int[] nums)
     {
-        //throw new NotImplementedException();
         int[] firstTwo = new int[2];
         if (nums.Length < 2)
             return nums;
@@ -499,20 +479,16 @@ public class Array1
     /// </summary>
     public bool Unlucky1(int[] nums)
     {
-        if (nums.Length == 0)
+        if (nums.Length < 2)
             return false;
-        for (int i = 0; i < nums.Length; i++)
+        if ((nums.Length == 2) && (nums[0] == 1 && nums[1] == 3))
+            return true;
+        if (nums.Length > 2)
         {
-            if (i < 1)
-            {
-                if (nums[i] == nums[i + 1])
-                    return true;
-            }
-            if (i > nums.Length - 3)
-            {
-                if (nums[i] == nums[i + 1])
-                    return true;
-            }
+            if ((nums[0] == 1 && nums[1] == 3) || (nums[1] == 1 && nums[2] == 3))
+                return true;
+            if ((nums[nums.Length - 3] == 1 && nums[nums.Length - 2] == 3) || (nums[nums.Length - 2] == 1 && nums[nums.Length - 1] == 3))
+                return true;
         }
         return false;
     }
