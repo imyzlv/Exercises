@@ -19,12 +19,12 @@ public class WordsInBox
     {
         string[] result = new string[3];
         string combined = "";
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             if (i == 1)
                 result[i] = "* " + word + " *";
             else
-                for(int j = 0; j < word.Length + 4; j++)
+                for (int j = 0; j < word.Length + 4; j++)
                     result[i] += "*";
         }
         return result;

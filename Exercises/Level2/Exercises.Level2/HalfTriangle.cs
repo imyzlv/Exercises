@@ -15,17 +15,33 @@ public class HalfTriangle
     /// 
     /// Example of 5:
     /// 
-    ///*
-    ///***
-    ///*****
-    ///*******
-    ///*********
+    ///* =          1 
+    ///*** =        3 
+    ///***** =      5
+    ///******* =    7
+    ///********* =  9
     ///
     /// </summary>
     /// <param name="n"></param>
     /// <returns></returns>
     public string[] GetHalfTriangle(int n)
     {
-        throw new NotImplementedException();
+        int lineLength = 1;
+        string[] halfTriangle = new string[n];
+        //return single star, if n = 1
+        if (n == 1)
+            halfTriangle[0] = "*";
+        else
+        {
+            for (int i = 0; i < n; i++)
+            {
+                if (i == 1)
+                    halfTriangle[0] = "*";
+                for (int j = 0; j < lineLength; j++)
+                    halfTriangle[i] += "*";
+                lineLength += 2;
+            }
+        }
+        return halfTriangle;
     }
 }

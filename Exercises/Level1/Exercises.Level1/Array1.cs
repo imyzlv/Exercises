@@ -20,9 +20,7 @@ public class Array1
     /// </summary>
     public bool FirstLast6(int[] nums)
     {
-        if (nums[0] == 6 || nums[nums.Length - 1] == 6)
-            return true;
-        return false;
+        return nums[0] == 6 || nums[nums.Length - 1] == 6;
     }
 
     /// <summary>
@@ -35,9 +33,7 @@ public class Array1
     /// </summary>
     public bool SameFirstLast(int[] nums)
     {
-        if ((nums.Length > 0) && (nums[0] == nums[nums.Length - 1]))
-            return true;
-        return false;
+        return nums.Length > 0 && (nums[0] == nums[nums.Length - 1]);
     }
 
     /// <summary>
@@ -47,8 +43,8 @@ public class Array1
     /// </summary>
     public int[] MakePi()
     {
-        int[] madePi = { 3, 1, 4 };
-        return madePi;
+        int[] pi = { 3, 1, 4 };
+        return pi;
     }
 
     /// <summary>
@@ -66,9 +62,7 @@ public class Array1
         firstElementB = b[0];
         lastElementA = a[a.Length - 1];
         lastElementB = b[b.Length - 1];
-        if ((firstElementA == firstElementB) || (lastElementA == lastElementB))
-            return true;
-        return false;
+        return (firstElementA == firstElementB) || (lastElementA == lastElementB);
     }
 
     /// <summary>
@@ -81,8 +75,8 @@ public class Array1
     public int Sum3(int[] nums)
     {
         int totalSumm = 0;
-        for (int i = 0; i < nums.Length; i++)
-            totalSumm += nums[i];
+        foreach (int i in nums)
+            totalSumm += i;
         return totalSumm;
     }
 
@@ -137,7 +131,7 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
-        int largerNumber = 0;
+        int largerNumber = int.MinValue;
         if (nums[0] > nums[nums.Length - 1])
             largerNumber = nums[0];
         else
@@ -182,7 +176,6 @@ public class Array1
         result[0] = a[1];
         result[1] = b[1];
         return result;
-
     }
 
     /// <summary>
@@ -214,7 +207,10 @@ public class Array1
         for (int i = 0; i < nums.Length; i++)
         {
             if ((nums[i] == 2) || (nums[i] == 3))
+            {
                 hasTwo3 = true;
+                break;
+            }
         }
         return hasTwo3;
     }
@@ -232,7 +228,10 @@ public class Array1
         for (int i = 0; i < nums.Length; i++)
         {
             if ((nums[i] == 2) || (nums[i] == 3))
+            {
                 hasNot23 = false;
+                break;
+            }
         }
         return hasNot23;
     }

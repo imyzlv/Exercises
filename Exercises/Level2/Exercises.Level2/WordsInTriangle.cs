@@ -34,6 +34,13 @@ public class WordsInTriangle
     /// <returns></returns>
     public string[] GetWordInTriangle(string[] words)
     {
-        throw new NotFiniteNumberException();
+        //string[] wordTriangle = new string[];
+        string longestWord = "";
+        foreach(string temp in words)
+        {
+            if (temp.Length > longestWord.Length)
+                longestWord = temp;
+        }
+
     }
 }
