@@ -18,7 +18,6 @@ public class WordsInBox
     public string[] GetBox(string word)
     {
         string[] result = new string[3];
-        string combined = "";
         for (int i = 0; i < 3; i++)
         {
             if (i == 1)
