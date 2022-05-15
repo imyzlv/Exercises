@@ -18,11 +18,7 @@ public class Warmup1
     /// </summary>
     public bool SleepIn(bool weekday, bool vacation)
     {
-        bool sleep = false;
-        //throw new NotImplementedException();
-        if (!weekday || vacation)
-            sleep = true;
-        return sleep;
+        return !weekday || vacation;
     }
 
     /// <summary>
@@ -37,11 +33,7 @@ public class Warmup1
     /// </summary>
     public bool MonkeyTrouble(bool aSmile, bool bSmile)
     {
-        //throw new NotImplementedException();
-        bool trouble = false;
-        if (aSmile == bSmile)
-            trouble = true;
-        return trouble;
+        return aSmile == bSmile; 
     }
 
     /// <summary>
@@ -114,14 +106,9 @@ public class Warmup1
     /// nearHundred(90) → true
     /// nearHundred(89) → false
     /// </summary>
-    public bool NearHundred(int n) //fix me
+    public bool NearHundred(int n)
     {
-        int smallNum, bigNum;
-        // bigNum = 
-        if ((((Math.Abs(n) >= 90) || (Math.Abs(n) <= 110))) || (((Math.Abs(n) >= 190) || (Math.Abs(n) <= 210))))
-            return true;
-        else
-            return false;
+        throw new NotImplementedException();
     }
 
     /// <summary>

@@ -16,7 +16,12 @@ public class Warmup2
     /// </summary>
     public string StringTimes(string str, int n)
     {
-        throw new NotImplementedException();
+        if (n == 0)
+            return "";
+        string outputString = null;
+        for (int i = 0; i < n; i++)
+            outputString += str;
+        return outputString;
     }
 
     /// <summary>
@@ -29,7 +34,11 @@ public class Warmup2
     /// </summary>
     public string FrontTimes(string str, int n)
     {
-        throw new NotImplementedException();
+        string firstThree = Convert.ToString( str[0] + str[1] + str[2]);
+        string output = null;
+        for (int i = 0; i < n; i++)
+            output += firstThree;
+        return output;
     }
 
     /// <summary>
