@@ -36,11 +36,12 @@ public class WordsInTriangle
     {
         //string[] wordTriangle = new string[];
         string longestWord = "";
-        foreach(string temp in words)
+        foreach(string current in words)
         {
-            if (temp.Length > longestWord.Length)
-                longestWord = temp;
+            if (current.Length > longestWord.Length)
+                longestWord = current;
         }
-
+        //return new string  { "as" };
+        throw new NotImplementedException();
     }
 }

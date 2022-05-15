@@ -42,5 +42,6 @@ public class Triforce
     public string[] GetTriforce(int n)
     {
         throw new NotImplementedException();
+        //1st 
     }
 }
