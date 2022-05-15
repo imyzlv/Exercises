@@ -28,7 +28,7 @@ public class HalfTriangle
     {
         int lineLength = 1;
         string[] halfTriangle = new string[n];
-        //return single star, if n = 1
+        //return a single star, if n = 1
         if (n == 1)
             halfTriangle[0] = "*";
         else
