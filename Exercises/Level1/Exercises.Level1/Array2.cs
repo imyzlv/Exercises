@@ -21,7 +21,9 @@ public class Array2
         for (int i = 0; i < nums.Length; i++)
         {
             if (nums[i] % 2 == 0)
+            {
                 counter++;
+            }
         }
         return counter;
     }
@@ -41,9 +43,14 @@ public class Array2
         foreach (int i in nums)
         {
             if (i < smallest)
+            {
                 smallest = i;
+            }
             if (i > largest)
+            {
                 largest = i;
+
+            }
         }
         return largest - smallest;
     }
@@ -75,7 +82,27 @@ public class Array2
     /// </summary>
     public int Sum13(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 0)
+        {
+            return 0;
+        }
+        int totalSum = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            totalSum += nums[i];
+            if (nums[i] == 13)
+            {
+                if (i < nums.Length - 1)
+                {
+                    totalSum -= nums[i + 1];
+                }
+                totalSum -= nums[i];
+
+            }
+        }
+        if (totalSum < 0)
+            totalSum = 0;
+        return totalSum;
     }
 
     /// <summary>
@@ -89,7 +116,32 @@ public class Array2
     /// </summary>
     public int Sum67(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 0)
+            return 0;
+        bool hasSix = false;
+        int totalSum = 0;
+        foreach (int i in nums)
+        {
+            //Add current iterator to final sum
+            totalSum += i;
+            //check, if we have six, mark as true
+            if (i == 6)
+            {
+                hasSix = true;
+            }
+            //if we are in section starting with six, deduce the iterator from sum
+            if (hasSix)
+            {
+                totalSum -= i;
+            }
+            //restore state
+            if (i == 7)
+            {
+                hasSix = false;
+            }
+
+        }
+        return totalSum;
     }
 
     /// <summary>
@@ -113,7 +165,16 @@ public class Array2
     /// </summary>
     public bool Lucky13(int[] nums)
     {
-        throw new NotImplementedException();
+        bool hasOneOrThree = true;
+        foreach (int i in nums)
+        {
+            if (i == 1 || i == 3)
+            {
+                hasOneOrThree = false;
+                break;
+            }
+        }
+        return hasOneOrThree;
     }
 
     /// <summary>
@@ -210,7 +271,9 @@ public class Array2
     {
         string[] fizzArray = new string[nums];
         for (int i = 0; i < nums; i++)
+        {
             fizzArray[i] = Convert.ToString(i);
+        }
         return fizzArray;
     }
 
@@ -223,7 +286,27 @@ public class Array2
     /// </summary>
     public bool No14(int[] nums)
     {
-        throw new NotImplementedException();
+        bool hasOne = false, hasFour = false;
+        foreach (int i in nums)
+        {
+            if (i == 1)
+            {
+                hasOne = true;
+            }
+            if(i==4)
+            {
+                hasFour = true;
+            }
+        }
+
+        if(hasOne && hasFour)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     /// <summary>
@@ -311,6 +394,7 @@ public class Array2
     /// </summary>
     public bool ModThree(int[] nums)
     {
+        //mēģināt ar 3 booliem pārbaudīt
         throw new NotImplementedException();
     }
 
