@@ -34,11 +34,7 @@ public class Warmup2
     /// </summary>
     public string FrontTimes(string str, int n)
     {
-        string firstThree = Convert.ToString( str[0] + str[1] + str[2]);
-        string output = null;
-        for (int i = 0; i < n; i++)
-            output += firstThree;
-        return output;
+        throw new NotImplementedException();
     }
 
     /// <summary>

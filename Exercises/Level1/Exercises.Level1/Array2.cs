@@ -68,7 +68,46 @@ public class Array2
     /// </summary>
     public int CenteredAverage(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 0)
+        {
+            return 0;
+        }
+        //Find the largest and smallest values in nums array
+        int largest = int.MinValue, smallest = int.MaxValue, finalSum = 0;
+        bool foundLargest = false, foundSmallest = false;
+        foreach (int i in nums)
+        {
+            if (i > largest)
+            {
+                largest = i;
+                foundLargest = true;
+            }
+            if (i < smallest)
+            {
+                smallest = i;
+                foundSmallest = true;
+            }
+        }
+
+        foreach(int i in nums)
+        {
+            if(i==largest)
+            {
+                foundLargest = false;
+            }
+            if(i==smallest )
+            {
+                foundSmallest = true;
+            }
+
+            if (i != largest && i != smallest)
+            {
+                finalSum += i;
+            }
+        }
+        finalSum /= nums.Length - 2;
+        return finalSum;
+
     }
 
     /// <summary>
@@ -293,13 +332,13 @@ public class Array2
             {
                 hasOne = true;
             }
-            if(i==4)
+            if (i == 4)
             {
                 hasFour = true;
             }
         }
 
-        if(hasOne && hasFour)
+        if (hasOne && hasFour)
         {
             return false;
         }
@@ -531,15 +570,24 @@ public class Array2
     /// </summary>
     public int[] Post4(int[] nums)
     {
-        /* int lastFour = 0;
-         for(int i =0; i< nums.Length; i++)
-         {
-             if (i == 4)
-                 lastFour = i;
-         }
-         int[] resultingArray = new int[lastFour];
-        */
-        throw new NotFiniteNumberException();
+        ////Find the last 4 in the array
+        //int lastFour = 0;
+        //for (int i = 0; i < nums.Length; i++)
+        //{
+        //    if (i == 4)
+        //        lastFour = i;
+        //}
+        //lastFour = nums.Length - lastFour + 1;
+        //int[] resultingArray = new int[lastFour];
+        ////Fill the new array with values from original array.
+        //int counter = 0;
+        //for (int i = lastFour; i < nums.Length; i++)
+        //{
+        //    resultingArray[counter] = nums[i];
+        //    counter++;
+        //}
+        //return resultingArray;
+        throw new NotImplementedException();
     }
 
     /// <summary>
