@@ -68,6 +68,8 @@ public class Array2
     /// </summary>
     public int CenteredAverage(int[] nums)
     {
+        throw new NotImplementedException();
+        /*
         if (nums.Length == 0)
         {
             return 0;
@@ -107,6 +109,7 @@ public class Array2
         }
         finalSum /= nums.Length - 2;
         return finalSum;
+        */
 
     }
 
