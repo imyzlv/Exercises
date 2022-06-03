@@ -682,7 +682,30 @@ public class Array2
     /// </summary>
     public string[] FizzBuzz(int start, int end)
     {
-        throw new NotImplementedException();
+        string fizz = "Fizz", buzz = "Buzz";
+        string[] result = new string[end - start];
+        int counter = 0;
+        for (int i = start; i < end; i++)
+        {
+            if (i % 3 == 0 && i % 5 == 0)
+            {
+                result[counter] = fizz + buzz;
+            }
+            else if (i % 3 == 0)
+            {
+                result[counter] = fizz;
+            }
+            else if (i % 5 == 0)
+            {
+                result[counter] = buzz;
+            }
+            else
+            {
+                result[counter] = i.ToString();
+            }
+            counter += 1;
+        }
+        return result;
     }
 }
 
