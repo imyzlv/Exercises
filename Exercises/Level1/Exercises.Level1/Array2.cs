@@ -450,7 +450,35 @@ public class Array2
     /// </summary>
     public bool HaveThree(int[] nums)
     {
-        throw new NotImplementedException();
+        bool hasThree = false;
+        int counter = 0;
+        if (nums.Length < 3)
+        {
+            return false;
+        }
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] != 3)
+            {
+                hasThree = false;
+            }
+            if (nums[i] == 3 && hasThree == true)
+            {
+                return false;
+            }
+            if (nums[i] == 3 && hasThree == false)
+            {
+                hasThree = true;
+                counter++;
+            }
+        }
+
+        if (counter == 3)
+        {
+            return true;
+        }
+        return true;
+
     }
 
     /// <summary>
@@ -634,7 +662,35 @@ public class Array2
     /// </summary>
     public int[] WithoutTen(int[] nums)
     {
-        throw new NotImplementedException();
+        // Return null, if input it null
+        if (nums.Length == 0)
+        {
+            return nums;
+        }
+
+        int[] result = new int[nums.Length];
+        int counter = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == 10)
+            {
+                nums[i] = 0;
+            }
+        }
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] != 0)
+            {
+                result[counter] = nums[i];
+            }
+            else
+            {
+                result[counter] = 0;
+            }
+            counter++;
+        }
+        return result;
     }
 
     /// <summary>
